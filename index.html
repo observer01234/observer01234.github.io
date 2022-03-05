@@ -47,70 +47,26 @@
     </tbody>
 </table>
 <div id="stats">
-    <table width="100%">
-        <thead>
-        <tr>
-            <th>URL</th>
-            <th>Number of Requests</th>
-            <th>Number of Errors</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>https://www.gosuslugi.ru/</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://www.evraz.com/ru/company</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://www.tmk-group.ru/</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://ya.ru/</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://belmarket.by/</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://yandex.by/</td>
-            <td>0</td>
-            <td>1157</td>
-        </tr>
-        <tr>
-            <td>https://president.gov.by/ru</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>https://www.sobyanin.ru/</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        </tbody>
-    </table>
+    Loading...
 </div>
 
 <script>
-    var targets = {
-        'https://www.gosuslugi.ru/': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://www.evraz.com/ru/company': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://www.tmk-group.ru/': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://ya.ru/': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://belmarket.by/': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://yandex.by/': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://president.gov.by/ru': {number_of_requests: 0, number_of_errored_responses: 0},
-        'https://www.sobyanin.ru/': {number_of_requests: 0, number_of_errored_responses: 0},
-    }
+    var targetList = [
+        'https://www.gosuslugi.ru/',
+        'https://www.evraz.com/ru/company',
+        'https://www.tmk-group.ru/',
+        'https://ya.ru/',
+        'https://belmarket.by/',
+        'https://yandex.by/',
+        'https://president.gov.by/ru',
+        'https://www.sobyanin.ru/',
+        'https://deepcake.io/customerstories#sberbank',
+    ]
+
+    var targets = targetList.reduce(function(map, target) {
+        map[target] = {number_of_requests: 0, number_of_errored_responses: 0};
+        return map;
+    }, {})
 
     var statsEl = document.getElementById('stats');
 
